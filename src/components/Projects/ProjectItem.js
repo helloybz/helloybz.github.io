@@ -13,7 +13,9 @@ const MyPaper = styled(Paper)(() => ({
 
 export function ProjectItem({ project }) {
 
-
+    function handleClick({ url }) {
+        window.location.href = url
+    }
     return (
         <Grid
             item lg={6}
@@ -23,6 +25,7 @@ export function ProjectItem({ project }) {
             sx={{
                 margin: "1rem", padding: "1rem",
             }}
+            onClick={() => handleClick({ url: project.homepage })}
         >
             <Grid item xs={12} component={Typography} sx={{ fontSize: 'h4.fontSize' }} >
                 {project.name}
