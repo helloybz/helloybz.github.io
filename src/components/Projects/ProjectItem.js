@@ -1,0 +1,35 @@
+import { Grid, Paper, Typography } from "@mui/material";
+import { styled } from '@mui/material/styles';
+
+const MyPaper = styled(Paper)(() => ({
+    backgroundColor: 'rgb(5,30,59)',
+    elevation4: true,
+    color: 'whitesmoke',
+    ":hover": {
+        backgroundColor: 'rgb(8,33,62)',
+        cursor: "pointer",
+    }
+}));
+
+export function ProjectItem({ project }) {
+
+
+    return (
+        <Grid
+            item lg={6}
+            component={MyPaper}
+            container
+            alignItems='flex-start'
+            sx={{
+                margin: "1rem", padding: "1rem",
+            }}
+        >
+            <Grid item xs={12} component={Typography} sx={{ fontSize: 'h4.fontSize' }} >
+                {project.name}
+            </Grid>
+            <Grid item xs={12} component={Typography} sx={{ fontSize: 'body1.fontSize' }}>
+                {project.description}
+            </Grid>
+        </Grid >
+    )
+}
