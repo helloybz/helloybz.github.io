@@ -10,12 +10,13 @@ export function getRepositories() {
         'GET /users/{username}/repos',
         {
             "username": "helloybz",
-            "type": "public"
+            "type": "all"
         }
     ).then((response) => {
         var new_data = []
+        console.log(response.data)
         for (let i = 0; i < response.data.length; i++) {
-            if (['CLANE', 'Deepwalk-Clone'].includes(response.data[i].name)) {
+            if (['CLANE', 'Deepwalk-Clone', 'pggan-clone'].includes(response.data[i].name)) {
                 new_data.push({ ...response.data[i] });
             }
         }
