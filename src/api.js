@@ -1,21 +1,13 @@
-import { Octokit } from '@octokit/core'
+import axios from 'axios';
 
-function getRESTClient() {
-    return new Octokit()
-}
 
 export function getRepositories() {
-    const octokit = getRESTClient()
-    return octokit.request(
-        'GET /users/{username}/repos',
-        {
-            "username": "helloybz",
-            "type": "all"
-        }
+    return axios.get(
+        'https://asia-northeast3-github-api-332405.cloudfunctions.net/get_github_repos',
     ).then((response) => {
         var new_data = []
         for (let i = 0; i < response.data.length; i++) {
-            if (['CLANE', 'deepwalk-clone', 'demucs-clone', 'pggan-clone'].includes(response.data[i].name)) {
+            if (['CLANE', 'deepwalk-clone', 'demucs-clone', 'pggan-clone', 'npg', 'AmSanWang'].includes(response.data[i].name)) {
                 new_data.push({ ...response.data[i] });
             }
         }
