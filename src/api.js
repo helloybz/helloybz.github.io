@@ -14,9 +14,8 @@ export function getRepositories() {
         }
     ).then((response) => {
         var new_data = []
-        console.log(response.data)
         for (let i = 0; i < response.data.length; i++) {
-            if (['CLANE', 'Deepwalk-Clone', 'pggan-clone'].includes(response.data[i].name)) {
+            if (['CLANE', 'deepwalk-clone', 'demucs-clone', 'pggan-clone'].includes(response.data[i].name)) {
                 new_data.push({ ...response.data[i] });
             }
         }
