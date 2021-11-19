@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { Grid } from "@mui/material";
-import { Box } from "@mui/system";
+import { Box, Grid, CircularProgress } from "@mui/material";
 
 import { ProjectItem } from "./ProjectItem";
 
@@ -32,7 +31,7 @@ export function ProjectList() {
         return (
             <Box>
                 <Grid container justifyContent="center" alignItems='center'>
-                    Loading
+                    <CircularProgress />
                 </Grid>
             </Box>
         )
