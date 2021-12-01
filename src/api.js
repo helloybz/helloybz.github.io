@@ -2,11 +2,11 @@ import axios from 'axios';
 
 
 const target_reposotory = [
-    // 'CLANE',
+    'CLANE',
     'deepwalk-clone',
     // 'demucs-clone',
-    'pggan-clone',
-    'npg',
+    // 'pggan-clone',
+    // 'npg',
     // 'AmSanWang',
 ]
 
