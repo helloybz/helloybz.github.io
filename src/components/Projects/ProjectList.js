@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Box, Grid, CircularProgress } from "@mui/material";
+import { Box, Grid, CircularProgress, Typography } from "@mui/material";
 
 import { ProjectItem } from "./ProjectItem";
 
@@ -27,41 +27,32 @@ export function ProjectList() {
         fetchMyRepos();
     }, [])
 
-    if (loading) {
-        return (
-            <Box>
-                <Grid container justifyContent="center" alignItems='center'>
-                    <CircularProgress />
-                </Grid>
-            </Box>
-        )
-    }
-    if (error) {
-        return (
-            <Box>
-                <Grid container justifyContent="center" alignItems='center'>
-                    {error.e}
-                </Grid>
-            </Box>
-        )
-    }
-    if (!projects) {
-        return (
-            <Box>
-                <Grid container justifyContent="center" alignItems='center'>
-                    No projects
-                </Grid>
-            </Box>
-        )
-    }
+    var content = null;
 
+    if (loading) {
+        content = <CircularProgress />
+    }
+    else if (error) {
+        content = error.e
+    }
+    else if (!projects) {
+        content = 'No projects'
+    } else {
+        content = projects.map((project, i) => (
+            <ProjectItem key={i} project={project} />
+        ))
+
+    }
     return (
         <Box>
             <Grid container justifyContent="center" alignItems='center'>
-                {projects.map((project, i) => (
-                    <ProjectItem key={i} project={project} />
-                ))
-                }
+                <Grid item xs={12} component={Typography} sx={{
+                    color: "rgb(243, 246, 249)",
+                    fontSize: { "xs": '2rem', "md": "h3.fontSize" }
+                }}>
+                    Projects
+                </Grid>
+                {content}
             </Grid>
         </Box>
     )

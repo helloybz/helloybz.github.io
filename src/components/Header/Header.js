@@ -9,19 +9,6 @@ export function Header() {
                     <Typography sx={{ flexGrow: 1, fontSize: 'h5.fontSize', fontWeight: '600', color: 'rgb(243, 246, 249)' }}>
                         helloybz.
                     </Typography>
-                    <Typography
-                        sx={{
-                            fontSize: '1rem',
-                            fontWeight: '500',
-                            color: 'rgb(243, 246, 249)',
-                            ":hover": {
-                                fontWeight: 'bold',
-                                cursor: "pointer",
-                            }
-                        }}
-                        onClick={() => { window.location.href = '/resume' }}>
-                        Resume
-                    </Typography>
                 </Toolbar>
             </AppBar>
         </Box >

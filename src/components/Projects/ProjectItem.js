@@ -18,7 +18,7 @@ export function ProjectItem({ project }) {
     }
     return (
         <Grid
-            item lg={6}
+            item xs={12}
             component={MyPaper}
             container
             alignItems='flex-start'
