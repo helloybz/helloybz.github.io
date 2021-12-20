@@ -1,5 +1,7 @@
 import { Grid, Typography } from "@mui/material";
-import { Email, GitHub, Article } from "@mui/icons-material"
+import Article from "@mui/icons-material/Article"
+import GitHub from "@mui/icons-material/GitHub"
+import Email from "@mui/icons-material/Email"
 
 function Message({ msg }) {
     return (
