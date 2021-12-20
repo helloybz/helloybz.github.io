@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const target_reposotory = [
     'CLANE',
-    'deepwalk-clone',
+    'Deepwalk-Clone',
     // 'demucs-clone',
     // 'pggan-clone',
     'NPG',
