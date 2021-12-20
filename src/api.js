@@ -6,7 +6,7 @@ const target_reposotory = [
     'deepwalk-clone',
     // 'demucs-clone',
     // 'pggan-clone',
-    'npg',
+    'NPG',
     // 'AmSanWang',
 ]
 
