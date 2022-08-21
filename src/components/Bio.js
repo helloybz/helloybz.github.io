@@ -5,7 +5,7 @@ import Email from "@mui/icons-material/Email"
 
 function Message({ msg }) {
     return (
-        <Grid item xs={12} textAlign='center'>
+        <Grid item xs={12} textAlign='left'>
             <Typography sx={{ fontSize: { "xs": "1rem", "md": '1.5rem' } }}>{msg}</Typography>
         </Grid>
     )
@@ -23,22 +23,35 @@ export function Bio() {
                 fontSize: { "xs": '2rem', "md": "h3.fontSize" },
             }}
         >
-            <Grid item xs={12}
+            <Grid item xs={8}
                 sx={{
-                    marginBottom: { "xs": "1.5rem" }
+                    marginBottom: { "xs": "1.5rem" },
+                    textAlign: 'left'
                 }}
             >
                 Youngbeom Choi
             </Grid>
 
-            <Message msg="ML Developer." />
-            <Message msg="Good at using PyTorch." />
-            <Message msg="Interested in GNN, MIR, GAN." />
+            <Grid
+                item
+                xs={8}
+                justifyContent='left'
+                continer
+            >
+                <Message msg="ML Engineer." />
+                <Message msg="Love PyTorch (Lightning)." />
+                <Message msg="Interested in GNN." />
+                <Message msg="Interested in Recommender." />
+                <Message msg="Interested in Transformer." />
+                <Message msg="Interested in ML Pipeline." />
+            </Grid>
 
-            <Grid item xs={11} container
-                justifyContent="center"
+            <Grid
+                item
+                xs={8}
+                container
+                justifyContent="left"
                 sx={{
-                    padding: '0 1rem',
                     fontSize: {
                         "xs": '1rem',
                         "md": "h5.fontSize"
@@ -46,8 +59,8 @@ export function Bio() {
                     margin: '1rem 0',
                 }}
             >
-                <Grid item xs={12} lg={3} container
-                    justifyContent={"center"}
+                <Grid item xs={12} lg={12} container
+                    justifyContent="left"
                     onClick={() => (window.location.href = '/resume')}
                     sx={{
                         marginBottom: {
@@ -58,7 +71,7 @@ export function Bio() {
                             "color": 'rgb(116,178, 251)'
                         },
                     }}>
-                    <Grid item xs={1} component={Article} />
+                    <Grid item xs={1} component={Article} sx={{ marginRight: "0.5rem" }} />
                     <Grid item xs={'auto'}>
                         <Typography>
                             Resume
@@ -67,8 +80,8 @@ export function Bio() {
                 </Grid>
 
 
-                <Grid item xs={12} lg={3} container
-                    justifyContent={"center"}
+                <Grid item xs={12} lg={12} container
+                    justifyContent="left"
                     onClick={() => (window.location.href = 'https://github.com/helloybz')}
                     sx={{
                         marginBottom: {
@@ -79,7 +92,7 @@ export function Bio() {
                             "color": 'rgb(116,178, 251)'
                         }
                     }}>
-                    <Grid item xs={1} component={GitHub} />
+                    <Grid item xs={1} component={GitHub} sx={{ marginRight: "0.5rem" }} />
                     <Grid item xs={'auto'}>
                         <Typography>
                             GitHub
@@ -87,16 +100,15 @@ export function Bio() {
                     </Grid>
                 </Grid>
 
-                <Grid item xs={12} lg={3} container
-                    justifyContent={"center"}
-
+                <Grid item xs={12} lg={12} container
+                    justifyContent="left"
                     sx={{
                         marginBottom: {
                             "xs": "0.5rem",
                         }
                     }}
                 >
-                    <Grid item xs={1} component={Email} />
+                    <Grid item xs={1} component={Email} sx={{ marginRight: "0.5rem" }} />
                     <Grid item xs={'auto'}>
                         <Typography>
                             helloybz@gmail.com
