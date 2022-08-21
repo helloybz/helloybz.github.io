@@ -6,7 +6,7 @@ const MyPaper = styled(Paper)(() => ({
     elevation4: true,
     color: 'whitesmoke',
     ":hover": {
-        backgroundColor: 'rgb(8,33,62)',
+        backgroundColor: 'rgb(11,36,65)',
         cursor: "pointer",
     }
 }));
@@ -23,7 +23,8 @@ export function ProjectItem({ project }) {
             container
             alignItems='flex-start'
             sx={{
-                margin: "1rem", padding: "1rem",
+                margin: "1rem 0",
+                padding: "1rem",
             }}
             onClick={() => handleClick({ url: project.homepage })}
         >
