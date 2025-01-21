@@ -1,10 +1,11 @@
 import { Grid } from "@mui/material";
 import { Header, Bio, ProjectList } from "./components";
-
+import { FetchDataButton } from "./components";
 
 function App() {
   return (
     <div>
+
       <Header />
       <Grid
         container
@@ -14,6 +15,7 @@ function App() {
           padding: { "xs": "0 0.5rem", "lg": "0 24rem" }
         }}
       >
+        <FetchDataButton />
         <Grid item xs={12} >
           <Bio />
         </Grid>
